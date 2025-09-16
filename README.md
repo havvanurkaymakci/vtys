@@ -1,20 +1,39 @@
-1. Projenin Tanımı
-Bu proje, Veritabanı Yönetim Sistemleri dersi kapsamında geliştirilmiş bir Kütüphane Yönetim Sistemidir. PostgreSQL veritabanı kullanılmış ve tablolar, ilişkiler, trigger’lar, fonksiyonlar ile prosedürler tasarlanmıştır.
+# 📚 Kütüphane Yönetim Sistemi  
 
-2. Kullanılan Veritabanı Nesneleri
-Tablolar:
-Kitap, Kategori, Kutuphane1, Uye, UyeIletisim, OduncAlma, Yayinevi, Yazar, Adres, Bolum vb.
-Alt tür tablolar: Akademik, GenelKonular, Ogrenci, Personel, AkademikPersonel
+Bu proje, **Veritabanı Yönetim Sistemleri** dersi kapsamında geliştirilmiştir.  
+Amaç; bir kütüphanedeki kitap, yazar, kategori, yayınevi ve kütüphane kayıtlarını ilişkisel veritabanı üzerinde yönetebilmektir.  
 
-Fonksiyonlar & Prosedürler:
-kategori_ekle: Yeni kategori ekler.
-kitap_sayisi: Belirli sayfa sayısından büyük kitap sayısını döner.
-guncelle: Öğrencilerin lisans yılını topluca günceller.
-getir: Posta koduna göre adres bilgilerini döner (overload edilmiş: hem integer hem varchar alabiliyor).
-uyebilgi: Posta koduna göre üye adı getirir (procedure).
+## 🔹 Kullanılan Teknolojiler  
+- **PostgreSQL** (veritabanı yönetimi)  
+- **Npgsql** (C# – PostgreSQL bağlantısı için .NET kütüphanesi)  
+- **C# Windows Forms** (basit arayüz geliştirme)  
 
-3. Örnek Veri
-Kategori tablosunda matematik, fizik, kimya, bilişim, hukuk gibi kategoriler var.
-Kitap tablosunda örnek kayıtlar: “kimya1”, “fizik3”, “hukuk1”, “matematik1”.
-Kutuphane1 tablosunda farklı raf ve posta kodları kayıtlı.
-Bolum tablosunda Bilgisayar Mühendisliği, Hukuk, Hemşirelik bölümleri var.
+## 🔹 Özellikler  
+- Kitap ekleme, güncelleme, silme, listeleme işlemleri  
+- Veri tabanı üzerinden doğrudan CRUD işlemleri  
+- Kullanıcı dostu basit bir **Windows Forms arayüzü**  
+- İlişkisel veritabanı tasarımı (kitap–yazar–kategori–yayınevi–kütüphane ilişkileri)  
+
+## 🔹 Veritabanı Tasarımı  
+Proje kapsamında tablolar arasında **ilişkisel bir veritabanı şeması** oluşturulmuştur.  
+ER diyagramı ayrıca görsel olarak repo içerisinde paylaşılmıştır.  
+
+## 🔹 Uygulama Arayüzü  
+Windows Forms üzerinden temel işlemler:  
+- **Listele** → Tüm kitapları görüntüler  
+- **Ekle** → Yeni kitap ekler  
+- **Sil** → Kitap kaydını siler  
+- **Güncelle** → Kitap bilgilerini günceller  
+
+Sonuçlar `DataGridView` bileşeni kullanılarak tablo halinde gösterilmektedir.  
+
+## 🔹 Kurulum ve Çalıştırma  
+
+1. PostgreSQL üzerinde `Kutuphane` veritabanını oluşturun.  
+2. SQL dump dosyasını çalıştırarak tabloları ekleyin.  
+3. Projeyi Visual Studio’da açın.  
+4. `Npgsql` kütüphanesinin kurulu olduğundan emin olun.  
+5. `Form1.cs` içindeki bağlantı bilgilerini (kullanıcı adı, şifre, port) kendi sisteminize göre düzenleyin.  
+6. Uygulamayı çalıştırarak CRUD işlemlerini gerçekleştirebilirsiniz.  
+
+---
